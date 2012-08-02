@@ -1,8 +1,9 @@
-﻿Ext.define('TaskCodes.model.worktypelistModel', {
+Ext.define('TaskCodes.model.worktypelistModel', {
 	extend: 'Ext.data.Model',
 	
 	config: 
 	{
+        id: 'uuid',
 		fields: 
 		[
 			{name: 'code', type: 'int'},
