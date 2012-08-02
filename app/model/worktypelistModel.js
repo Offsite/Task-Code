@@ -3,7 +3,6 @@ Ext.define('TaskCodes.model.worktypelistModel', {
 	
 	config: 
 	{
-        id: 'uuid',
 		fields: 
 		[
 			{name: 'code', type: 'int'},
