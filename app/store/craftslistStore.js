@@ -4,6 +4,6 @@ Ext.define("TaskCodes.store.craftslistStore", {
         model: 'TaskCodes.model.craftslistModel',
         storeId: 'craftslistStore',
         autoLoad: true,
-        autoSync: true
+        //autoSync: true
     }
 });
