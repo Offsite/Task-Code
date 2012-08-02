@@ -1,0 +1,266 @@
+[
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "10",
+        "subtask": "0",
+        "description": "Home Office Support"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "10",
+        "subtask": "2",
+        "description": "Project Manager"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "10",
+        "subtask": "5",
+        "description": "Project Controls"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "10",
+        "subtask": "6",
+        "description": "Estimating"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "10",
+        "subtask": "7",
+        "description": "HO Safety"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "10",
+        "subtask": "8",
+        "description": "HO Administration"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "11",
+        "subtask": "1",
+        "description": "HO QA/QC"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "20",
+        "subtask": "0",
+        "description": "Superintendent"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "25",
+        "subtask": "4",
+        "description": "QC-QC Inspectors"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "25",
+        "subtask": "5",
+        "description": "Site Warehouse"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "05",
+        "task": "00",
+        "subtask": "1",
+        "description": "Mobilization"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "05",
+        "task": "00",
+        "subtask": "4",
+        "description": "Office/Facilities"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "05",
+        "task": "00",
+        "subtask": "8",
+        "description": "Sanitation-Water"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "05",
+        "task": "00",
+        "subtask": "9",
+        "description": "Office Supplies"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "00",
+        "subtask": "1",
+        "description": "Construction Tools"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "00",
+        "subtask": "2",
+        "description": "Small Tools"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "00",
+        "subtask": "3",
+        "description": "Consumables"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "00",
+        "subtask": "4",
+        "description": "Rental Equipment"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "00",
+        "subtask": "8",
+        "description": "Material Freight"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "00",
+        "subtask": "9",
+        "description": "Welding Rods-Gasses"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "01",
+        "subtask": "1",
+        "description": "Saskatoon Warehouse Labour"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "08",
+        "task": "00",
+        "subtask": "4",
+        "description": "Welder Testing"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "09",
+        "task": "00",
+        "subtask": "1",
+        "description": "Auto Expense"
+    },
+    {
+        "area": "00",
+        "workType": "41",
+        "craft": "06",
+        "task": "10",
+        "subtask": "0",
+        "description": "Contingency"
+    },
+    {
+        "area": "00",
+        "workType": "60",
+        "craft": "16",
+        "task": "01",
+        "subtask": "0",
+        "description": "LOA"
+    },
+    {
+        "area": "00",
+        "workType": "60",
+        "craft": "16",
+        "task": "02",
+        "subtask": "0",
+        "description": "Travel"
+    },
+    {
+        "area": "00",
+        "workType": "60",
+        "craft": "16",
+        "task": "04",
+        "subtask": "0",
+        "description": "Meals"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "06",
+        "task": "01",
+        "subtask": "2",
+        "description": "Fuel"
+    },
+    {
+        "area": "00",
+        "workType": "41",
+        "craft": "06",
+        "task": "30",
+        "subtask": "0",
+        "description": "Profit"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "08",
+        "task": "00",
+        "subtask": "2",
+        "description": "Drug Testing"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "08",
+        "task": "00",
+        "subtask": "0",
+        "description": "Hiring-Testing-Orientation"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "04",
+        "task": "00",
+        "subtask": "0",
+        "description": "Bulk Material"
+    },
+    {
+        "area": "00",
+        "workType": "40",
+        "craft": "02",
+        "task": "16",
+        "subtask": "0",
+        "description": "Planning"
+    }
+]
