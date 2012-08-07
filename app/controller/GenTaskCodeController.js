@@ -82,13 +82,16 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         
         //set up for store
         var newrecord;
-        newrecord.area = newValues.addTaskArea;
-        newrecord.workType = newValues.addTaskType;
-        newrecord.craft = newValues.addTaskCraft;
-        newrecord.task = tasknum;
-        newrecord.subtask = subtasknum;
-        newrecord.descripton = "I really need to create a 'make description' routine";
-                
+        newrecord({
+            area: newValues.addTaskArea,
+            workType: newValues.addTaskType,
+            craft: newValues.addTaskCraft,
+            task: tasknum,
+            subtask: subtasknum,
+            descripton: "I really need to create a 'make description' routine"
+        });
+        console.log(newrecord.area, newrecord.workType, newrecord.craft);
+                    
         //add value to store
         //taskcodeLocalStore.add(newrecord);
         //taskcodeLocalStore.sync();
