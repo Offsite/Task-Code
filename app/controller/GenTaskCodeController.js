@@ -47,14 +47,14 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     onAddTaskCodeCommand: function() {
         console.log('onAddTaskCodeCommand');
         var addTaskCodeView = Ext.getCmp('addTaskCodeForm');
+        taskcodeLocalStore = Ext.getCmp('taskcodeLocalStore')
         var newValues = addTaskCodeView.getValues();
-        console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + newValues.addtask + ' ' + newValues.addsubtask);
         //        Ext.Msg.alert('Values', 'Area: ' + newValues.addTaskArea + '<br />Work Type: ' + newValues.addTaskType + '<br />Craft: ' + newValues.addTaskCraft + '<br />Task: ' + newValues.addtask + '<br />Subtask: ' + newValues.addsubtask, Ext.emptyFn);
         //Check if Task Description already exists, find open task/subtask
         var tasknum = 0;
         var subtasknum = 0;
         var Store = Ext.getStore('taskcodeStore');
-        var matchTask = Store.findBy(function(record) {
+        var matchTask = taskcodeLocalStore.findBy(function(record) {
             //requires editing
             for (this.tasknum = 0; this.tasknum < 100; this.tasknum++)
             {
@@ -66,7 +66,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         console.log('fin1');
         //this system does not handle the case of 1000 tasks
         newValues.addtask = tasknum;
-        var matchTask2 = Store.findBy(function(record) {
+        var matchTask2 = taskcodeLocalStore.findBy(function(record) {
             //requires editing
             for (this.subtasknum = 0; this.subtasknum < 10; this.subtasknum++)
             {
@@ -75,7 +75,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
                 }
             }
         });
-        console.log('fin2');
+        console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + fin1 + ' ' + fin2);
         console.log(matchTask);
         console.log(matchTask2);
         console.log(tasknum);
