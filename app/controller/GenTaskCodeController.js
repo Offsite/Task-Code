@@ -63,7 +63,6 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             }
         });
         //this system does not handle the case of 1000 tasks
-        newValues.addtask = tasknum;
         var matchTask2 = taskcodeLocalStore.findBy(function(record) {
             //requires editing
             for (this.subtasknum = 0; this.subtasknum < 10; this.subtasknum++)
@@ -73,14 +72,28 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
                 }
             }
         });
+        
+        //spit out some console junk
         console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + tasknum + ' ' + subtasknum);
         console.log(matchTask);
         console.log(matchTask2);
         console.log(tasknum);
         console.log(subtasknum);
-        newValues.addsubtask = subtasknum
-        taskcodeLocalStore.add(newValues);
+        
+        //set up for store
+        var newrecord;
+        newrecord.area = newValues.addTaskArea;
+        newrecord.workType = newValues.addTaskType;
+        newrecord.craft = newValues.addTaskCraft;
+        newrecord.task = tasknum;
+        newrecord.subtask = subtasknum;
+        newrecord.descripton = "I really need to create a 'make description' routine";
+                
+        //add value to store
+        taskcodeLocalStore.add(newrecord);
         taskcodeLocalStore.sync();
+        
+        
         addTaskCodeView.setValues({
             addsubtask: ''
         });
