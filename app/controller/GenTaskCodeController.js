@@ -93,8 +93,8 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         console.log(newrecord.area, newrecord.workType, newrecord.craft, newrecord.task, newrecord.subtask);
                     
         //add value to store
-        //taskcodeLocalStore.add(newrecord);
-        //taskcodeLocalStore.sync();
+        taskcodeLocalStore.add(newrecord);
+        taskcodeLocalStore.sync();
         
         
         addTaskCodeView.setValues({
