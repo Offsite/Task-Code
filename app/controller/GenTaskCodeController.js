@@ -55,10 +55,9 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         var subtasknum = 0;
         var matchTask = taskcodeLocalStore.findBy(function(record) {
             //requires editing
-            for (this.tasknum = 0; this.tasknum < 100; this.tasknum++)
+            for (tasknum = 0; tasknum < 100; tasknum++)
             {
-                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') != this.tasknum) {
-                    this.tasknum++;
+                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') != tasknum) {
                     return true;
                 }
             }
@@ -66,10 +65,10 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         //this system does not handle the case of 1000 tasks
         var matchTask2 = taskcodeLocalStore.findBy(function(record) {
             //requires editing
-            for (this.subtasknum = 0; this.subtasknum < 10; this.subtasknum++)
+            for (subtasknum = 0; subtasknum < 10; subtasknum++)
             {
-                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') == this.tasknum && record.get('subtask') != subtasknum) {
-                    this.subtasknum++;
+                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') == tasknum && record.get('subtask') != subtasknum) {
+                    subtasknum++;
                     return true;
                 }
             }
