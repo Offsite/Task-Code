@@ -75,7 +75,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
                 }
             }
         });
-        console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + fin1 + ' ' + fin2);
+        console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + tasknum + ' ' + subtasknum);
         console.log(matchTask);
         console.log(matchTask2);
         console.log(tasknum);
