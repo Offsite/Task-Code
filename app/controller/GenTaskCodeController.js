@@ -58,6 +58,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             for (this.tasknum = 0; this.tasknum < 100; this.tasknum++)
             {
                 if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') != this.tasknum) {
+                    this.tasknum++;
                     return true;
                 }
             }
@@ -67,7 +68,8 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             //requires editing
             for (this.subtasknum = 0; this.subtasknum < 10; this.subtasknum++)
             {
-                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') == newValues.addtask && record.get('subtask') != subtasknum) {
+                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') == this.tasknum && record.get('subtask') != subtasknum) {
+                    this.subtasknum++;
                     return true;
                 }
             }
@@ -95,7 +97,6 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         //add value to store
         taskcodeLocalStore.add(newrecord);
         taskcodeLocalStore.sync();
-        
         
         addTaskCodeView.setValues({
             addsubtask: ''
