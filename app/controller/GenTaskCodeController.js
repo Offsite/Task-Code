@@ -90,8 +90,8 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         newrecord.descripton = "I really need to create a 'make description' routine";
                 
         //add value to store
-        taskcodeLocalStore.add(newrecord);
-        taskcodeLocalStore.sync();
+        //taskcodeLocalStore.add(newrecord);
+        //taskcodeLocalStore.sync();
         
         
         addTaskCodeView.setValues({
