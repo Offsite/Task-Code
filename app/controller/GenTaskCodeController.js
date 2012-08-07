@@ -99,6 +99,8 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     launch: function() {
         this.callParent(arguments);
         console.log('launch');
+        var taskcodeLocalStore = Ext.getStore('taskcodeLocalStore');
+        taskcodeLocalStore.load();
     },
     init: function() {
         this.callParent(arguments);
