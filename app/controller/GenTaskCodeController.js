@@ -90,7 +90,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             subtask: subtasknum,
             descripton: "I really need to create a 'make description' routine"
         };
-        console.log(newrecord.area, newrecord.workType, newrecord.craft);
+        console.log(newrecord.area, newrecord.workType, newrecord.craft, newrecord.task, newrecord.subtask);
                     
         //add value to store
         //taskcodeLocalStore.add(newrecord);
