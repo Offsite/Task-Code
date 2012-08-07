@@ -47,7 +47,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     onAddTaskCodeCommand: function() {
         console.log('onAddTaskCodeCommand');
         var addTaskCodeView = Ext.getCmp('addTaskCodeForm');
-        taskcodeLocalStore = Ext.getCmp('taskcodeLocalStore')
+        taskcodeLocalStore = Ext.getStore('taskcodeLocalStore')
         var newValues = addTaskCodeView.getValues();
         //        Ext.Msg.alert('Values', 'Area: ' + newValues.addTaskArea + '<br />Work Type: ' + newValues.addTaskType + '<br />Craft: ' + newValues.addTaskCraft + '<br />Task: ' + newValues.addtask + '<br />Subtask: ' + newValues.addsubtask, Ext.emptyFn);
         //Check if Task Description already exists, find open task/subtask
