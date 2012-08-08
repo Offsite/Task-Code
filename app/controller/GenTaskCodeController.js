@@ -53,17 +53,18 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         //Check if Task Description already exists, find open task/subtask
         var tasknum = 0;
         var subtasknum = 0;
-        var matchTask = taskcodeLocalStore.findBy(function(record) {
-            //requires editing
-            for (tasknum = 0; tasknum < 100; tasknum++)
-            {
-                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') != tasknum) {
-                    return true;
-                }
-            }
-        });
+        function FindRecordOne(record) {
+        //requires editing
+            if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') != tasknum) {
+            return true;
+        }
+        for (tasknum = 0; tasknum < 100; tasknum++)
+        {
+            var matchTask = taskcodeLocalStore.findBy(FindRecordOne(record));
+        }
+        
         //this system does not handle the case of 1000 tasks
-        var matchTask2 = taskcodeLocalStore.findBy(function(record) {
+        /*var matchTask2 = taskcodeLocalStore.findBy(function(record) {
             //requires editing
             for (subtasknum = 0; subtasknum < 10; subtasknum++)
             {
@@ -72,15 +73,15 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
                     return true;
                 }
             }
-        });
+        });*/
         
         //spit out some console junk
         console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + tasknum + ' ' + subtasknum);
-        console.log(matchTask);
-        console.log(matchTask2);
+        console.log(this.matchTask);
+        console.log(this.matchTask2);
         console.log(tasknum);
         console.log(subtasknum);
-        
+        var desc = "A description";
         //set up for store
         var newrecord;
         newrecord = {
@@ -89,7 +90,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             craft: newValues.addTaskCraft,
             task: tasknum,
             subtask: subtasknum,
-            descripton: "I really need to create a 'make description' routine"
+            descripton: desc
         };
         console.log(newrecord.area, newrecord.workType, newrecord.craft, newrecord.task, newrecord.subtask);
                     
