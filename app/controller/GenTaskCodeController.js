@@ -55,7 +55,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         var subtasknum = 0;
         for (tasknum = 0; tasknum < 100; tasknum++)
         {
-            var matchTask = taskcodeLocalStore.findBy('FindRecordOne', this);// FindRecordOne);
+            var matchTask = taskcodeLocalStore.findBy(this.FindRecordOne(record), this);// FindRecordOne);
         }
         
         //this system does not handle the case of 1000 tasks
@@ -97,12 +97,6 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             addsubtask: ''
         });
     },
-    FindRecordOne: function(record) {
-        //requires editing
-            if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
-            return true;
-        }
-    },
     onGenTaskCodeBackCommand: function() {
         console.log('onGenTaskCodeBackCommand');
         this.activateSetArea();
@@ -113,6 +107,12 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     onGenTaskCodeAddCommand: function() {
         console.log('onGenTaskCodeAddCommand');
         this.activateAddTaskCode();
+    },
+    FindRecordOne: function(record) {
+        //requires editing
+        if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
+            return true;
+        }
     },
     launch: function() {
         this.callParent(arguments);
@@ -125,3 +125,9 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         console.log('initialize GenTaskCodeController');
     }
 });
+var FindRecordOne = function(record) {
+    //requires editing
+    if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
+        return true;
+    }
+};
