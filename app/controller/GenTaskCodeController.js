@@ -55,7 +55,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         var subtasknum = 0;
         for (tasknum = 0; tasknum < 100; tasknum++)
         {
-            var matchTask = taskcodeLocalStore.findBy(this.FindRecordOne(record), this);// FindRecordOne);
+            var matchTask = taskcodeLocalStore.findBy(this.FindRecordOne(), this);// FindRecordOne);
         }
         
         //this system does not handle the case of 1000 tasks
