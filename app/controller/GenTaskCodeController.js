@@ -53,14 +53,9 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         //Check if Task Description already exists, find open task/subtask
         var tasknum = 0;
         var subtasknum = 0;
-        function FindRecordOne(record) {
-        //requires editing
-            if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') != tasknum) {
-            return true;
-        }
         for (tasknum = 0; tasknum < 100; tasknum++)
         {
-            var matchTask = taskcodeLocalStore.findBy(FindRecordOne(record));
+            var matchTask = taskcodeLocalStore.findBy('FindRecordOne', this);// FindRecordOne);
         }
         
         //this system does not handle the case of 1000 tasks
@@ -101,6 +96,12 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         addTaskCodeView.setValues({
             addsubtask: ''
         });
+    },
+    FindRecordOne: function(record) {
+        //requires editing
+            if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
+            return true;
+        }
     },
     onGenTaskCodeBackCommand: function() {
         console.log('onGenTaskCodeBackCommand');
