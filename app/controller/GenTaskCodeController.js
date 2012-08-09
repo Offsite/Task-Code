@@ -53,9 +53,20 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         //Check if Task Description already exists, find open task/subtask
         var tasknum = 0;
         var subtasknum = 0;
+        function findrec(record)
+        {
+            //requires editing
+            if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
+                return true;
+            }
+        }
         for (tasknum = 0; tasknum < 100; tasknum++)
         {
-            var matchTask = taskcodeLocalStore.findBy(this.FindRecordOne(), this);// FindRecordOne);
+            var matchTask = taskcodeLocalStore.findBy(function(record){
+                if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
+                    return true;
+                }
+            });// FindRecordOne);
         }
         
         //this system does not handle the case of 1000 tasks
