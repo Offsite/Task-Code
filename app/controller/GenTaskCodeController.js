@@ -53,40 +53,40 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         //Check if Task Description already exists, find open task/subtask
         var tasknum = 0;
         var subtasknum = 0;
-        function findrec(record)
-        {
-            //requires editing
-            if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
-                return true;
-            }
-        }
-        for (tasknum = 0; tasknum < 100; tasknum++)
-        {
-            var matchTask = taskcodeLocalStore.findBy(function(record){
-                if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
-                    return true;
-                }
-            });// FindRecordOne);
-        }
+        //var matchTask = false;
         
-        //this system does not handle the case of 1000 tasks
-        /*var matchTask2 = taskcodeLocalStore.findBy(function(record) {
-            //requires editing
-            for (subtasknum = 0; subtasknum < 10; subtasknum++)
-            {
-                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') == tasknum && record.get('subtask') != subtasknum) {
-                    subtasknum++;
-                    return true;
-                }
+        
+        
+        var matchTask = taskcodeLocalStore.findBy(function(record){
+            if (record.get('area') != newValues.addTaskArea || record.get('workType') != newValues.addTaskType || record.get('craft') != newValues.addTaskCraft) {
+                return false;
             }
-        });*/
+            while(tasknum < 49)
+            {
+                while(subtasknum < 10)
+                {
+                    if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') == tasknum && record.get('subtask') != subtasknum) {
+                        return false;
+                    }
+                    subtasknum++;
+                }
+                subtasknum = 0;
+                if (record.get('area') == newValues.addTaskArea && record.get('workType') == newValues.addTaskType && record.get('craft') == newValues.addTaskCraft && record.get('task') != tasknum) {
+                    return false;
+                }
+                tasknum++;
+            }
+        });
+            console.log(matchTask, " matchTask");
+        
+        if(tasknum < 10)
+        {
+            tasknum = "0" + tasknum;
+        }
         
         //spit out some console junk
         console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + tasknum + ' ' + subtasknum);
-        console.log(this.matchTask);
-        console.log(this.matchTask2);
-        console.log(tasknum);
-        console.log(subtasknum);
+        //console.log(matchTask2);
         var desc = "A description";
         //set up for store
         var newrecord;
@@ -96,7 +96,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             craft: newValues.addTaskCraft,
             task: tasknum,
             subtask: subtasknum,
-            descripton: desc
+            description: desc
         };
         console.log(newrecord.area, newrecord.workType, newrecord.craft, newrecord.task, newrecord.subtask);
                     
@@ -118,12 +118,6 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     onGenTaskCodeAddCommand: function() {
         console.log('onGenTaskCodeAddCommand');
         this.activateAddTaskCode();
-    },
-    FindRecordOne: function(record) {
-        //requires editing
-        if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
-            return true;
-        }
     },
     launch: function() {
         this.callParent(arguments);

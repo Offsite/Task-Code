@@ -1,38 +1,38 @@
 [
     {
-        "code": 20,
+        "code": "20",
         "description": "Site Setup"
     },
     {
-        "code": 21,
+        "code": "21",
         "description": "Concrete"
     },
     {
-        "code": 22,
+        "code": "22",
         "description": "Structural"
     },
     {
-        "code": 23,
+        "code": "23",
         "description": "Vessels and Mech Equipment"
     },
     {
-        "code": 24,
+        "code": "24",
         "description": "Piping"
     },
     {
-        "code": 25,
+        "code": "25",
         "description": "Insulation"
     },
     {
-        "code": 26,
+        "code": "26",
         "description": "Instrumentation"
     },
     {
-        "code": 27,
+        "code": "27",
         "description": "Electrical"
     },
     {
-        "code": 28,
+        "code": "28",
         "description": "Start Up Assistance"
     }
 ]

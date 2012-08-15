@@ -29,6 +29,14 @@ var setup = function() {
                     xtype: 'addtaskcode'
                 };
                 Ext.Viewport.add([newProjView, setAreasView, genTaskCodeView, editAreaView, addTaskCodeView]);
+                var taskcodeStore = Ext.getStore('taskcodeStore');
+                taskcodeStore.load({
+                    callback: function(records, operation, success){
+                        var taskcodeLocalStore = Ext.getStore('taskcodeLocalStore');
+                        taskcodeLocalStore.add(taskcodeStore.getRange());
+                    },
+                    scope: this
+                });
             }
         });
     };

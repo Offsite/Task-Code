@@ -137,7 +137,7 @@ Ext.define('TaskCodes.view.addtaskcode', {
                         title: 'Codes',
                         docked: 'top',
                         ui: 'light',
-                        items: 
+                        /*items: 
                         [
                             {
                                 xtype: 'button',
@@ -147,25 +147,14 @@ Ext.define('TaskCodes.view.addtaskcode', {
                                 ui: 'decline',
                                 itemId: 'addtaskcodeDeleteCodeButton'
                             }
-                        ]
+                        ]*/
                     },
                     {
                         xtype: 'list',
-                        emptyText: 'Just Filling the Space',
-                        itemTpl: '{plchldr}',
-                        data: 
-                        [
-                            {plchldr: '00-00-00-000'},
-                            {plchldr: '00-00-00-001'},
-                            {plchldr: '00-00-00-011'},
-                            {plchldr: '00-00-00-111'},
-                            {plchldr: '00-00-01-111'},
-                            {plchldr: '00-00-11-111'},
-                            {plchldr: '00-01-11-111'},
-                            {plchldr: '00-11-11-111'},
-                            {plchldr: '01-11-11-111'},
-                            {plchldr: '11-11-11-111'}
-                        ]
+                        emptyText: 'No Task Codes so far...',
+    			        onItemDisclosure: true,
+                        itemTpl: '{area}-{workType}-{craft}-{task}{subtask}',
+                        store: 'taskcodeLocalStore'
                     }
                 ]    
             }

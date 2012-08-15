@@ -6,11 +6,11 @@ Ext.define('TaskCodes.model.taskcodeModel', {
         identifier: 'uuid',
 		fields: 
 		[
-			{name: 'area', type: 'int'},
-			{name: 'workType', type: 'int'},
-			{name: 'craft', type: 'int'},
-			{name: 'task', type: 'int'},
-            {name: 'subtask', type: 'int'},
+			{name: 'area', type: 'string'},
+			{name: 'workType', type: 'string'},
+			{name: 'craft', type: 'string'},
+			{name: 'task', type: 'string'},
+            {name: 'subtask', type: 'string'},
             {name: 'description', type: 'string'}
 		],
 		validations: 

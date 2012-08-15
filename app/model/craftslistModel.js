@@ -5,7 +5,7 @@ Ext.define('TaskCodes.model.craftslistModel', {
 	{
 		fields: 
 		[
-			{name: 'code', type: 'int'},
+			{name: 'code', type: 'string'},
 			{name: 'description', type: 'string'},
 		],
 		validations: 

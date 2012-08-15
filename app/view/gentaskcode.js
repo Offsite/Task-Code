@@ -4,7 +4,7 @@ Ext.define('TaskCodes.view.gentaskcode', {
 	requires: ['Ext.ux.touch.grid.View'],
 	config:
 	{
-		scrollable: true,
+        layout: 'fit',
 		items:
 		[
 			{
@@ -22,32 +22,45 @@ Ext.define('TaskCodes.view.gentaskcode', {
 					}
 				]
 			},
+            /*{
+                xtype: 'list',
+                store: 'taskcodeLocalStore',
+                itemTpl: '{area}-{workType}-{craft}-{task}{subtask}   {description}'
+            },*/
 			{
 				xtype: 'touchgridpanel',
+                title: 'Grid',
+                store: 'taskcodeLocalStore',
 				columns:
 		        [
 			       	{
 						header: 'A',
+                        dataIndex: 'area',
 						width: '5%'
 			       	},
 			       	{
 				   		header: 'WT',
+                        dataIndex: 'workType',
 				   		width: '5%'
 			       	},
 			       	{
 				   		header: 'C',
+                        dataIndex: 'craft',
 				   		width: '5%'
 			       	},
 			       	{
 				   		header: 'T',
+                        dataIndex: 'task',
 				   		width: '5%'
 			       	},
 			       	{
 				   		header: 'ST',
+                        dataIndex: 'subtask',
 				   		width: '5%'
 			       	},
 			       	{
 						header: 'Description',
+                        dataIndex: 'description',
 						width: '75%'
 			       	}
 				]
