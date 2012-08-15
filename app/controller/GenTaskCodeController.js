@@ -132,6 +132,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     },
     onGenTaskCodeSaveCommand: function() {
         console.log('onGenTaskCodeSaveCommand');
+        Ext.Msg.alert('Not Implemented Yet');
     },
     onGenTaskCodeAddCommand: function() {
         console.log('onGenTaskCodeAddCommand');
