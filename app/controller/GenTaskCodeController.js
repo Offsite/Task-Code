@@ -122,6 +122,7 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         taskcodeLocalStore.sync();
         
         addTaskCodeView.setValues({
+            addtask: '',
             addsubtask: ''
         });
     },

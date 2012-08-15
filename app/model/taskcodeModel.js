@@ -11,7 +11,8 @@ Ext.define('TaskCodes.model.taskcodeModel', {
 			{name: 'craft', type: 'string'},
 			{name: 'task', type: 'string'},
             {name: 'subtask', type: 'string'},
-            {name: 'description', type: 'string'}
+            {name: 'description', type: 'string'},
+            {name: 'active', type: 'boolean'}
 		],
 		validations: 
 		[

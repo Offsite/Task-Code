@@ -1,7 +1,7 @@
 Ext.define('TaskCodes.view.gentaskcode', {
 	extend: 'Ext.Panel',
 	alias: 'widget.gentaskcode',
-	requires: ['Ext.ux.touch.grid.View'],
+	requires: ['Ext.ux.touch.grid.View', 'Ext.ux.touch.grid.feature.Editable'],
 	config:
 	{
         layout: 'fit',
@@ -31,6 +31,12 @@ Ext.define('TaskCodes.view.gentaskcode', {
 				xtype: 'touchgridpanel',
                 title: 'Grid',
                 store: 'taskcodeLocalStore',
+                features   : [
+                    {
+                        ftype    : 'Ext.ux.touch.grid.feature.Editable',
+                        launchFn : 'initialize'
+                    }
+                ],
 				columns:
 		        [
 			       	{
@@ -66,7 +72,18 @@ Ext.define('TaskCodes.view.gentaskcode', {
                     {
                         header: 'Active',
                         dataIndex: 'active',
-                        width: '7%'
+                        width: '7%',
+                        renderer: function(value) {
+                            return value ? 'Yes' : 'No';
+                        },
+                        editor: {
+                            xtype: 'selectfield',
+                            options: 
+                            [
+                                { text : 'Yes', value : true },
+                                { text : 'No',  value : false }
+                            ]
+                        }
                     }
 				]
 			},

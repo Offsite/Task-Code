@@ -5,7 +5,8 @@
         "craft": "02",
         "task": "10",
         "subtask": "0",
-        "description": "Home Office Support"
+        "description": "Home Office Support",
+        "active": true
     },
     {
         "area": "00",
@@ -13,7 +14,8 @@
         "craft": "02",
         "task": "10",
         "subtask": "2",
-        "description": "Project Manager"
+        "description": "Project Manager",
+        "active": true
     },
     {
         "area": "00",
@@ -21,7 +23,8 @@
         "craft": "02",
         "task": "10",
         "subtask": "5",
-        "description": "Project Controls"
+        "description": "Project Controls",
+        "active": true
     },
     {
         "area": "00",
@@ -29,7 +32,8 @@
         "craft": "02",
         "task": "10",
         "subtask": "6",
-        "description": "Estimating"
+        "description": "Estimating",
+        "active": true
     },
     {
         "area": "00",
@@ -37,7 +41,8 @@
         "craft": "02",
         "task": "10",
         "subtask": "7",
-        "description": "HO Safety"
+        "description": "HO Safety",
+        "active": true
     },
     {
         "area": "00",
@@ -45,7 +50,8 @@
         "craft": "02",
         "task": "10",
         "subtask": "8",
-        "description": "HO Administration"
+        "description": "HO Administration",
+        "active": true
     },
     {
         "area": "00",
@@ -53,7 +59,8 @@
         "craft": "02",
         "task": "11",
         "subtask": "1",
-        "description": "HO QA/QC"
+        "description": "HO QA/QC",
+        "active": true
     },
     {
         "area": "00",
@@ -61,7 +68,8 @@
         "craft": "02",
         "task": "20",
         "subtask": "0",
-        "description": "Superintendent"
+        "description": "Superintendent",
+        "active": true
     },
     {
         "area": "00",
@@ -69,7 +77,8 @@
         "craft": "02",
         "task": "25",
         "subtask": "4",
-        "description": "QC-QC Inspectors"
+        "description": "QC-QC Inspectors",
+        "active": true
     },
     {
         "area": "00",
@@ -77,7 +86,8 @@
         "craft": "02",
         "task": "25",
         "subtask": "5",
-        "description": "Site Warehouse"
+        "description": "Site Warehouse",
+        "active": true
     },
     {
         "area": "00",
@@ -85,7 +95,8 @@
         "craft": "05",
         "task": "00",
         "subtask": "1",
-        "description": "Mobilization"
+        "description": "Mobilization",
+        "active": true
     },
     {
         "area": "00",
@@ -93,7 +104,8 @@
         "craft": "05",
         "task": "00",
         "subtask": "4",
-        "description": "Office/Facilities"
+        "description": "Office/Facilities",
+        "active": true
     },
     {
         "area": "00",
@@ -101,7 +113,8 @@
         "craft": "05",
         "task": "00",
         "subtask": "8",
-        "description": "Sanitation-Water"
+        "description": "Sanitation-Water",
+        "active": true
     },
     {
         "area": "00",
@@ -109,7 +122,8 @@
         "craft": "05",
         "task": "00",
         "subtask": "9",
-        "description": "Office Supplies"
+        "description": "Office Supplies",
+        "active": true
     },
     {
         "area": "00",
@@ -117,7 +131,8 @@
         "craft": "06",
         "task": "00",
         "subtask": "1",
-        "description": "Construction Tools"
+        "description": "Construction Tools",
+        "active": true
     },
     {
         "area": "00",
@@ -125,7 +140,8 @@
         "craft": "06",
         "task": "00",
         "subtask": "2",
-        "description": "Small Tools"
+        "description": "Small Tools",
+        "active": true
     },
     {
         "area": "00",
@@ -133,7 +149,8 @@
         "craft": "06",
         "task": "00",
         "subtask": "3",
-        "description": "Consumables"
+        "description": "Consumables",
+        "active": true
     },
     {
         "area": "00",
@@ -141,7 +158,8 @@
         "craft": "06",
         "task": "00",
         "subtask": "4",
-        "description": "Rental Equipment"
+        "description": "Rental Equipment",
+        "active": true
     },
     {
         "area": "00",
@@ -149,7 +167,8 @@
         "craft": "06",
         "task": "00",
         "subtask": "8",
-        "description": "Material Freight"
+        "description": "Material Freight",
+        "active": true
     },
     {
         "area": "00",
@@ -157,7 +176,8 @@
         "craft": "06",
         "task": "00",
         "subtask": "9",
-        "description": "Welding Rods-Gasses"
+        "description": "Welding Rods-Gasses",
+        "active": true
     },
     {
         "area": "00",
@@ -165,7 +185,8 @@
         "craft": "06",
         "task": "01",
         "subtask": "1",
-        "description": "Saskatoon Warehouse Labour"
+        "description": "Saskatoon Warehouse Labour",
+        "active": true
     },
     {
         "area": "00",
@@ -173,7 +194,8 @@
         "craft": "08",
         "task": "00",
         "subtask": "4",
-        "description": "Welder Testing"
+        "description": "Welder Testing",
+        "active": true
     },
     {
         "area": "00",
@@ -181,7 +203,8 @@
         "craft": "09",
         "task": "00",
         "subtask": "1",
-        "description": "Auto Expense"
+        "description": "Auto Expense",
+        "active": true
     },
     {
         "area": "00",
@@ -189,7 +212,8 @@
         "craft": "06",
         "task": "10",
         "subtask": "0",
-        "description": "Contingency"
+        "description": "Contingency",
+        "active": true
     },
     {
         "area": "00",
@@ -197,7 +221,8 @@
         "craft": "16",
         "task": "01",
         "subtask": "0",
-        "description": "LOA"
+        "description": "LOA",
+        "active": true
     },
     {
         "area": "00",
@@ -205,7 +230,8 @@
         "craft": "16",
         "task": "02",
         "subtask": "0",
-        "description": "Travel"
+        "description": "Travel",
+        "active": true
     },
     {
         "area": "00",
@@ -213,7 +239,8 @@
         "craft": "16",
         "task": "04",
         "subtask": "0",
-        "description": "Meals"
+        "description": "Meals",
+        "active": true
     },
     {
         "area": "00",
@@ -221,7 +248,8 @@
         "craft": "06",
         "task": "01",
         "subtask": "2",
-        "description": "Fuel"
+        "description": "Fuel",
+        "active": true
     },
     {
         "area": "00",
@@ -229,7 +257,8 @@
         "craft": "06",
         "task": "30",
         "subtask": "0",
-        "description": "Profit"
+        "description": "Profit",
+        "active": true
     },
     {
         "area": "00",
@@ -237,7 +266,8 @@
         "craft": "08",
         "task": "00",
         "subtask": "2",
-        "description": "Drug Testing"
+        "description": "Drug Testing",
+        "active": true
     },
     {
         "area": "00",
@@ -245,7 +275,8 @@
         "craft": "08",
         "task": "00",
         "subtask": "0",
-        "description": "Hiring-Testing-Orientation"
+        "description": "Hiring-Testing-Orientation",
+        "active": true
     },
     {
         "area": "00",
@@ -253,7 +284,8 @@
         "craft": "04",
         "task": "00",
         "subtask": "0",
-        "description": "Bulk Material"
+        "description": "Bulk Material",
+        "active": true
     },
     {
         "area": "00",
@@ -261,6 +293,7 @@
         "craft": "02",
         "task": "16",
         "subtask": "0",
-        "description": "Planning"
+        "description": "Planning",
+        "active": true
     }
 ]
