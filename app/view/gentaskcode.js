@@ -36,33 +36,38 @@ Ext.define('TaskCodes.view.gentaskcode', {
 			       	{
 						header: 'A',
                         dataIndex: 'area',
-						width: '5%'
+						width: '4%'
 			       	},
 			       	{
 				   		header: 'WT',
                         dataIndex: 'workType',
-				   		width: '5%'
+				   		width: '4%'
 			       	},
 			       	{
 				   		header: 'C',
                         dataIndex: 'craft',
-				   		width: '5%'
+				   		width: '4%'
 			       	},
 			       	{
 				   		header: 'T',
                         dataIndex: 'task',
-				   		width: '5%'
+				   		width: '4%'
 			       	},
 			       	{
 				   		header: 'ST',
                         dataIndex: 'subtask',
-				   		width: '5%'
+				   		width: '4%'
 			       	},
 			       	{
 						header: 'Description',
                         dataIndex: 'description',
-						width: '75%'
-			       	}
+						width: '73%'
+			       	},
+                    {
+                        header: 'Active',
+                        dataIndex: 'active',
+                        width: '7%'
+                    }
 				]
 			},
 			{

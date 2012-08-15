@@ -154,7 +154,7 @@ Ext.define('TaskCodes.view.addtaskcode', {
                         emptyText: 'No Task Codes so far...',
     			        onItemDisclosure: true,
                         itemTpl: '{area}-{workType}-{craft}-{task}{subtask}',
-                        store: 'taskcodeLocalStore'
+                        store: 'taskcodeTmpStore'
                     }
                 ]    
             }

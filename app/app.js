@@ -9,7 +9,7 @@ var setup = function() {
             name: 'TaskCodes',
             models: ['arealistModel', 'craftslistModel', 'taskcodeModel', 'tasklistModel', 'worktypelistModel', 'projectModel'],
             views: ['newproj', 'setareas', 'workid', 'gentaskcode', 'addarea', 'editarea', 'addtaskcode'],
-            stores: ['taskcodeLocalStore', 'taskcodeStore', 'arealistStore', 'worktypelistStore', 'craftslistStore', 'tasklistStore', 'projectStore'],
+            stores: ['taskcodeTmpStore', 'taskcodeLocalStore', 'taskcodeStore', 'arealistStore', 'worktypelistStore', 'craftslistStore', 'tasklistStore', 'projectStore'],
             controllers: ['NewProjController', 'SetAreasController', 'GenTaskCodeController'],
             launch: function() {
                 console.log('Application Launch');

@@ -55,8 +55,6 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         var subtasknum = 0;
         //var matchTask = false;
         
-        
-        
         var matchTask = taskcodeLocalStore.findBy(function(record){
             if (record.get('area') != newValues.addTaskArea || record.get('workType') != newValues.addTaskType || record.get('craft') != newValues.addTaskCraft) {
                 return false;
@@ -84,10 +82,26 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             tasknum = "0" + tasknum;
         }
         
+        var areaDesc;
+        var typeDesc;
+        var craftDesc;
+        var arealistStore = Ext.getStore('arealistStore');
+        var craftslistStore = Ext.getStore('craftslistStore');
+        var worktypelistStore = Ext.getStore('worktypelistStore');
+        //create description
+        var index = arealistStore.find('code', newValues.addTaskArea);
+        areaDesc = arealistStore.getAt(index);
+        index = craftslistStore.find('code', newValues.addTaskCraft);
+        craftDesc = craftslistStore.getAt(index);
+        index = worktypelistStore.find('code', newValues.addTaskType);
+        typeDesc = worktypelistStore.getAt(index);
+        var desc = areaDesc.get('areaDescription') + ' - ' + typeDesc.get('description') + ' - ' + craftDesc.get('description') + ' - ' + newValues.addtask;
+        if (newValues.addsubtask != '')
+        {
+             desc = desc + ' - ' + newValues.addsubtask;
+        }
         //spit out some console junk
         console.log(newValues.addTaskArea + ' ' + newValues.addTaskType + ' ' + newValues.addTaskCraft + ' ' + tasknum + ' ' + subtasknum);
-        //console.log(matchTask2);
-        var desc = "A description";
         //set up for store
         var newrecord;
         newrecord = {
@@ -99,8 +113,11 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             description: desc
         };
         console.log(newrecord.area, newrecord.workType, newrecord.craft, newrecord.task, newrecord.subtask);
-                    
+        
+        var taskcodeTmpStore = Ext.getStore('taskcodeTmpStore');
         //add value to store
+        taskcodeTmpStore.add(newrecord);
+        taskcodeTmpStore.sync();
         taskcodeLocalStore.add(newrecord);
         taskcodeLocalStore.sync();
         
@@ -130,9 +147,3 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         console.log('initialize GenTaskCodeController');
     }
 });
-var FindRecordOne = function(record) {
-    //requires editing
-    if (record.get('area') == this.newValues.addTaskArea && record.get('workType') == this.newValues.addTaskType && this.record.get('craft') == this.newValues.addTaskCraft && record.get('task') != this.tasknum) {
-        return true;
-    }
-};
