@@ -15,6 +15,7 @@ Ext.define('TaskCodes.view.gentaskcode', {
 				[
 					{
 						xtype: 'button',
+                        text: ' Add Codes',
 						ui: 'action',
 						iconCls: 'add',
 						iconMask: true,
@@ -31,60 +32,38 @@ Ext.define('TaskCodes.view.gentaskcode', {
 				xtype: 'touchgridpanel',
                 title: 'Grid',
                 store: 'taskcodeLocalStore',
-                features   : [
-                    {
-                        ftype    : 'Ext.ux.touch.grid.feature.Editable',
-                        launchFn : 'initialize'
-                    }
-                ],
 				columns:
 		        [
 			       	{
 						header: 'A',
                         dataIndex: 'area',
-						width: '4%'
+						width: '5%'
 			       	},
 			       	{
 				   		header: 'WT',
                         dataIndex: 'workType',
-				   		width: '4%'
+				   		width: '5%'
 			       	},
 			       	{
 				   		header: 'C',
                         dataIndex: 'craft',
-				   		width: '4%'
+				   		width: '5%'
 			       	},
 			       	{
 				   		header: 'T',
                         dataIndex: 'task',
-				   		width: '4%'
+				   		width: '5%'
 			       	},
 			       	{
 				   		header: 'ST',
                         dataIndex: 'subtask',
-				   		width: '4%'
+				   		width: '5%'
 			       	},
 			       	{
 						header: 'Description',
                         dataIndex: 'description',
-						width: '73%'
+						width: '75%'
 			       	},
-                    {
-                        header: 'Active',
-                        dataIndex: 'active',
-                        width: '7%',
-                        renderer: function(value) {
-                            return value ? 'Yes' : 'No';
-                        },
-                        editor: {
-                            xtype: 'selectfield',
-                            options: 
-                            [
-                                { text : 'Yes', value : true },
-                                { text : 'No',  value : false }
-                            ]
-                        }
-                    }
 				]
 			},
 			{

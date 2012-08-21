@@ -4,7 +4,8 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         refs: {
             setAreaView: 'setareas',
             genTaskCodeView: 'gentaskcode',
-            addTaskCodeView: 'addtaskcode'
+            addTaskCodeView: 'addtaskcode',
+            outputView: 'output'
         },
         control: {
             genTaskCodeView: {
@@ -18,6 +19,16 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
                 addTaskCodeDeleteCodeCommand: 'onAddTaskCodeDeleteCodeCommand'
             }
         }
+    },
+    activateOutput: function(outputTable) {
+        var outputView = this.getOutputView();
+        //outputView.setHtml(outputTable);
+        Ext.Viewport.animateActiveItem(outputView, {
+            type: 'slide',
+            direction: 'left'
+        });
+        var outputPanel = Ext.getCmp('outputPanel');
+        outputPanel.setHtml(outputTable);
     },
     activateSetArea: function() {
         var setAreaView = this.getSetAreaView();
@@ -95,7 +106,11 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         craftDesc = craftslistStore.getAt(index);
         index = worktypelistStore.find('code', newValues.addTaskType);
         typeDesc = worktypelistStore.getAt(index);
-        var desc = areaDesc.get('areaDescription') + ' - ' + typeDesc.get('description') + ' - ' + craftDesc.get('description') + ' - ' + newValues.addtask;
+        var desc = areaDesc.get('areaDescription') + ' - ' + typeDesc.get('description') + ' - ' + craftDesc.get('description');
+        if(newValues.addtask != '')
+        {
+            desc = desc + ' - ' + newValues.addtask;
+        }
         if (newValues.addsubtask != '')
         {
              desc = desc + ' - ' + newValues.addsubtask;
@@ -132,7 +147,76 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     },
     onGenTaskCodeSaveCommand: function() {
         console.log('onGenTaskCodeSaveCommand');
-        Ext.Msg.alert('Not Implemented Yet');
+        //Ext.Msg.alert('Not Implemented Yet');
+        
+        var taskcodeLocalStore = Ext.getStore('taskcodeLocalStore');
+        var taskCodeCount = taskcodeLocalStore.getCount('taskcodeLocalStore');
+        var currentRecord;
+        
+        //var taskCodeTable = '<table border = 1>';
+        var i = 0;
+        /*
+        while (i < taskCodeCount) {
+            console.log(taskCodeCount, " task code count");
+            currentRecord = taskcodeLocalStore.getAt(i);
+            
+            taskCodeTable += '<tr><td>';
+            taskCodeTable += currentRecord.get('area');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>';
+            taskCodeTable += currentRecord.get('workType');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>';
+            taskCodeTable += currentRecord.get('craft');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>'; 
+            taskCodeTable += currentRecord.get('task');
+            taskCodeTable += currentRecord.get('subtask');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>';
+            taskCodeTable += currentRecord.get('description');
+            taskCodeTable += '</td></tr>';
+            
+            i++;
+        }
+        
+        taskCodeTable += '</table>';
+        */
+        var taskCodeTable = 'The following data is in csv format which can be imported into excel.\n\nArea,Work Type,Craft,Task,Description\n';
+        while (i < taskCodeCount) {
+            console.log(taskCodeCount, " task code count");
+            currentRecord = taskcodeLocalStore.getAt(i);
+            
+            taskCodeTable += currentRecord.get('area');
+            taskCodeTable += ',';
+            
+            taskCodeTable += currentRecord.get('workType');
+            taskCodeTable += ',';
+            
+            taskCodeTable += currentRecord.get('craft');
+            taskCodeTable += ',';
+             
+            taskCodeTable += currentRecord.get('task');
+            taskCodeTable += currentRecord.get('subtask');
+            taskCodeTable += ',';
+            
+            taskCodeTable += currentRecord.get('description');
+            taskCodeTable += '\n';
+            
+            i++;
+        }
+
+        //Ext.Viewport.add({xtype: 'output'});
+        //this.activateOutput(taskCodeTable);
+        var msg = {
+            subject: 'Task Codes for Project ABC012-XXX',
+            body: taskCodeTable
+        };
+        window.location = 'mailto:?' + Ext.urlEncode(msg);
     },
     onGenTaskCodeAddCommand: function() {
         console.log('onGenTaskCodeAddCommand');
