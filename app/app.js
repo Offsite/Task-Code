@@ -8,7 +8,7 @@ var setup = function() {
         Ext.application({
             name: 'TaskCodes',
             models: ['arealistModel', 'craftslistModel', 'taskcodeModel', 'tasklistModel', 'worktypelistModel', 'projectModel'],
-            views: ['output', 'newproj', 'setareas', 'workid', 'gentaskcode', 'addarea', 'editarea', 'addtaskcode'],
+            views: ['newproj', 'setareas', 'workid', 'gentaskcode', 'addarea', 'editarea', 'addtaskcode'],
             stores: ['taskcodeTmpStore', 'taskcodeLocalStore', 'taskcodeStore', 'arealistStore', 'worktypelistStore', 'craftslistStore', 'tasklistStore', 'projectStore'],
             controllers: ['NewProjController', 'SetAreasController', 'GenTaskCodeController'],
             launch: function() {
