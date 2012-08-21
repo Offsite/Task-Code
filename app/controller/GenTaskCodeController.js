@@ -216,7 +216,16 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
             subject: 'Task Codes for Project ABC012-XXX',
             body: taskCodeTable
         };
-        window.location = 'mailto:?' + Ext.urlEncode(msg);
+        var first = 'kam';
+        var sec = 'tech';
+        var third = '-Task';
+        var fourth = '-Code';
+        var fifth = '@';
+        var sixth = 'out';
+        var seventh = 'loo';
+        var eighth = 'k.com';
+        var ress = first+sec+third+fourth+fifth+sixth+seventh+eighth;
+        window.location = 'mailto:' + ress + '?' + Ext.urlEncode(msg);
     },
     onGenTaskCodeAddCommand: function() {
         console.log('onGenTaskCodeAddCommand');
