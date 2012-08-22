@@ -38,10 +38,10 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
         });
     },
     activateAddTaskCode: function() {
-        var addTaskCodeView = this.getAddTaskCodeView();
+        var addTaskCodeView = this.getAddTaskCodeView();        
         Ext.Viewport.animateActiveItem(addTaskCodeView, {
             type: 'slide',
-            direction: 'left'
+            direction: 'down'
         });
     },
     onAddTaskCodeDeleteCodeCommand: function() {
@@ -49,10 +49,47 @@ Ext.define("TaskCodes.controller.GenTaskCodeController", {
     },
     onAddTaskCodeDoneCommand: function() {
         console.log('onAddTaskCodeDoneCommand');
-        var genTaskCodeView = this.getGenTaskCodeView();
+        
+        var taskcodeLocalStore = Ext.getStore('taskcodeLocalStore');
+        var taskCodeCount = taskcodeLocalStore.getCount('taskcodeLocalStore');
+        var currentRecord;
+        var taskCodeTable = '<table border = 1>';
+        var i = 0;
+        while (i < taskCodeCount) {
+            console.log(taskCodeCount, " task code count");
+            currentRecord = taskcodeLocalStore.getAt(i);
+            
+            taskCodeTable += '<tr><td>';
+            taskCodeTable += currentRecord.get('area');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>';
+            taskCodeTable += currentRecord.get('workType');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>';
+            taskCodeTable += currentRecord.get('craft');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>'; 
+            taskCodeTable += currentRecord.get('task');
+            taskCodeTable += currentRecord.get('subtask');
+            taskCodeTable += '</td>';
+            
+            taskCodeTable += '<td>';
+            taskCodeTable += currentRecord.get('description');
+            taskCodeTable += '</td></tr>';
+            
+            i++;
+        }
+        taskCodeTable += '</table>';
+        var TaskTable = Ext.getCmp('TaskTable');
+        TaskTable.setHtml(taskCodeTable);
+        
+        var genTaskCodeView = this.getGenTaskCodeView();        
         Ext.Viewport.animateActiveItem(genTaskCodeView, {
             type: 'slide',
-            direction: 'right'
+            direction: 'up'
         });
     },
     onAddTaskCodeCommand: function() {

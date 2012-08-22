@@ -23,12 +23,18 @@ Ext.define('TaskCodes.view.gentaskcode', {
 					}
 				]
 			},
+            {
+                xtype: 'panel',
+                styleHtmlContent: true,
+                id: 'TaskTable',
+                scrollable: 'vertical'
+            },
             /*{
                 xtype: 'list',
                 store: 'taskcodeLocalStore',
                 itemTpl: '{area}-{workType}-{craft}-{task}{subtask}   {description}'
             },*/
-			{
+			/*{
 				xtype: 'touchgridpanel',
                 title: 'Grid',
                 store: 'taskcodeLocalStore',
@@ -65,7 +71,7 @@ Ext.define('TaskCodes.view.gentaskcode', {
 						width: '75%'
 			       	},
 				]
-			},
+			},*/
 			{
 				xtype: 'toolbar',
 				docked: 'bottom',
