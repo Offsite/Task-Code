@@ -6181,7 +6181,7 @@ input, textarea {
 /* line 14, ../themes/stylesheets/sencha-touch/default/widgets/_media.scss */
 .x-video-ghost {
   -webkit-background-size: 100% auto;
-  background: black url("android.css") center center no-repeat;
+  background: black url() center center no-repeat;
 }
 
 /* line 19, ../themes/stylesheets/sencha-touch/default/widgets/_media.scss */
@@ -9662,4 +9662,3 @@ input[type="search"]::-webkit-search-cancel-button {
     -webkit-transform: rotate(330deg);
   }
 }
-
